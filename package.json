@@ -8,12 +8,17 @@
     "android": "react-native run-android",
     "test": "jest --coverage --config jest.config.js",
     "test:w": "jest --config jest.config.js --watchAll",
+    "clean:ios": "cd ios && rm -rf build",
+    "reset-cache": "npm run start - --reset-cache",
     "tsc": "tsc",
     "prepush": "npm run test"
   },
   "dependencies": {
     "react": "16.6.3",
-    "react-native": "0.58.3"
+    "react-native": "0.58.3",
+    "react-native-gesture-handler": "^1.0.15",
+    "react-native-vector-icons": "^6.2.0",
+    "react-navigation": "^3.0.9"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.3.0",
@@ -23,6 +28,8 @@
     "@types/jest": "^23.3.13",
     "@types/react": "^16.7.22",
     "@types/react-native": "^0.57.33",
+    "@types/react-native-vector-icons": "^4.6.4",
+    "@types/react-navigation": "^3.0.1",
     "@types/react-test-renderer": "^16.0.3",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "24.0.0",

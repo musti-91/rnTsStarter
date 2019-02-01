@@ -1,25 +1,24 @@
-const plugins = [
-  ['@babel/plugin-proposal-decorators', { legacy: true }],
-  ['@babel/plugin-proposal-class-properties', { loose: true }],
-  [
-    'module-resolver',
-    {
-      root: ['./src'],
-      alias: {
-        '@assets': './assets',
-        '@components': './components',
-        '@containers': './containers',
-        '@utils': './utils',
-        '@stores': './stores',
-        '@services': './services',
-        '@i18n': './i18n',
-        '@navigation': './navigation'
-      }
-    }
-  ]
-]
-
 module.exports = {
   presets: ['module:metro-react-native-babel-preset'],
-  plugins
+  plugins: [
+    ['@babel/plugin-proposal-decorators', { legacy: true }],
+    ['@babel/plugin-proposal-class-properties', { loose: true }],
+    [
+      require.resolve('babel-plugin-module-resolver'),
+      {
+        root: ['./src/'],
+        extensions: ['.ts', '.tsx', '.json'],
+        alias: {
+          '@assets': './src/assets',
+          '@components': './src/components',
+          '@containers': './src/containers',
+          '@utils': './src/utils',
+          '@stores': './src/stores',
+          '@services': './src/services',
+          '@i18n': './src/i18n',
+          '@navigations': './src/navigations'
+        }
+      }
+    ]
+  ]
 }

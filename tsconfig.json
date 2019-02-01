@@ -14,14 +14,15 @@
     "paths": {
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
-      "@containers/*": ["src/conatiners/*"],
+      "@containers/*": ["src/containers/*"],
       "@utils/*": ["src/utils/*"],
       "@stores/*": ["src/stores/*"],
       "@services/*": ["src/services/*"],
       "@i18n/*": ["src/i18n/*"],
-      "@navigation/*": ["src/navigation/*"]
+      "@navigations/*": ["src/navigations/*"]
     }
   },
   "exclude": ["node_modules"],
+  "include": ["./*", "./src/**/*", "./__tests__/**/*"],
   "files": ["./src/utils/types/index.d.ts"]
 }
