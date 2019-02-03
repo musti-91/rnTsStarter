@@ -10,12 +10,18 @@
  */
 
 import React, { Component } from 'react'
+import { Provider } from 'mobx-react'
+import AppNavigationContainer from '@navigations/index'
 
-import MainStackNavigator from '@navigations/index'
+import NoteStore from '@stores/NoteStore/index'
 
-interface Props {}
-export default class App extends Component<Props> {
+interface IProps {}
+export default class App extends Component<IProps> {
   render() {
-    return <MainStackNavigator />
+    return (
+      <Provider store={NoteStore}>
+        <AppNavigationContainer />
+      </Provider>
+    )
   }
 }

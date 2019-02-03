@@ -9,16 +9,21 @@
     "test": "jest --coverage --config jest.config.js",
     "test:w": "jest --config jest.config.js --watchAll",
     "clean:ios": "cd ios && rm -rf build",
-    "reset-cache": "npm run start - --reset-cache",
+    "reset-cache": "watchman watch-del-all && npm run start - --reset-cache",
     "tsc": "tsc",
     "prepush": "npm run test"
   },
   "dependencies": {
+    "@types/uuid": "^3.4.4",
+    "mobx": "^5.9.0",
+    "mobx-react": "^5.4.3",
     "react": "16.6.3",
     "react-native": "0.58.3",
+    "react-native-elements": "^1.0.0",
     "react-native-gesture-handler": "^1.0.15",
     "react-native-vector-icons": "^6.2.0",
-    "react-navigation": "^3.0.9"
+    "react-navigation": "^3.1.2",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.3.0",
@@ -45,5 +50,10 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "rnpm": {
+    "assets": [
+      "./assets/fonts/"
+    ]
   }
 }

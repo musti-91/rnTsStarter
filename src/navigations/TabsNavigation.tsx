@@ -1,43 +1,66 @@
-import { createBottomTabNavigator } from 'react-navigation'
+import { createBottomTabNavigator, createStackNavigator } from 'react-navigation'
 
 import { COLORS, ICONS } from '@assets/constants'
 
 import IconHelper from '@components/helper/IconHelper'
 /**
- * Dummy pages
+ * render tabs Components
+ * https://reactnavigation.org/docs/en/bottom-tab-navigator.html#docsNav
  */
-import MyComponent from '@components/MyComponent'
 import MainContainer from '@containers/MainContainer'
+import MyModal from '@containers/MyModal'
+import SettingsContainer from '@containers/SettingsContainer'
+import ProfileContainer from '@containers/ProfileContainer'
 
-/**
- * Tab navigator, Home screen after Auth Screens
- */
-const Tabs = createBottomTabNavigator(
+const SettingsNavigator = createStackNavigator(
   {
-    mainContainer: {
+    Settings: SettingsContainer,
+    Modal: MyModal
+  },
+  {
+    mode: 'modal',
+    headerMode: 'none'
+  }
+)
+// const HomeNavigator = createStackNavigator({
+//   HomeScreen: NoteContainer,
+// })
+
+const TabsNavigationContainer = createBottomTabNavigator(
+  {
+    Home: {
       screen: MainContainer,
-      title: 'MainContainer',
+      title: 'Main Container',
       navigationOptions: {
         tabBarIcon: IconHelper(ICONS.CHECK)
       }
     },
-    myComponent: {
-      screen: MyComponent,
-      title: 'my component',
+    Profile: {
+      screen: ProfileContainer,
+      title: 'My Component',
       navigationOptions: {
         tabBarIcon: IconHelper(ICONS.CHECK)
+      }
+    },
+    Settings: {
+      screen: SettingsNavigator,
+      title: 'Settings',
+      navigationOptions: {
+        tabBarIcon: IconHelper(ICONS.INFO)
       }
     }
   },
   {
     tabBarOptions: {
-      activeTintColor: COLORS.RED,
-      tabStyle: {
-        backgroundColor: COLORS.RED,
-        opacity: 0.5
+      activeTintColor: COLORS.COPPER,
+      activeBackgroundColor: COLORS.MISSION_TAN,
+      inactiveBackgroundColor: COLORS.MISSION_TAN,
+      inactiveTintColor: COLORS.BURGUNDY,
+      style: {
+        borderColor: COLORS.MISSION_TAN
       }
     }
   }
 )
 
-export default Tabs
+export default TabsNavigationContainer
