@@ -1,4 +1,4 @@
-# RN-Mobx-Ts
+# RNTsStarter
 
 ###### React-native Boilerplate with react-native, MobX & TypeScript,React Navigation
 
