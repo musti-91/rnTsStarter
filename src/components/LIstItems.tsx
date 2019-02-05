@@ -4,6 +4,7 @@ import { View, Text, TouchableWithoutFeedback } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import { ListItem } from 'react-native-elements'
 import { globalStyles } from '@assets/globalStyles'
+import { SafeAreaView } from 'react-navigation'
 interface IProps {
   list: any[]
   onPress(id: string): void
@@ -15,9 +16,9 @@ const ListItems: SFC<IProps> = ({ list, onPress, error, iconName }) => {
   const { container } = globalStyles
   if (error) {
     return (
-      <View>
+      <SafeAreaView>
         <Text>Something went wrong</Text>
-      </View>
+      </SafeAreaView>
     )
   }
   return (

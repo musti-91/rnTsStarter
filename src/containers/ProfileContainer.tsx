@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { NavigationInjectedProps, NavigationScreenProps } from 'react-navigation'
+import { NavigationInjectedProps, NavigationScreenProps, SafeAreaView } from 'react-navigation'
 import { View, Text } from 'react-native'
 
 import { globalStyles } from '@assets/globalStyles'
@@ -11,9 +11,9 @@ class ProfileContainer extends Component<IProps> {
   render() {
     const { container, txt } = globalStyles
     return (
-      <View style={[container, { backgroundColor: COLORS.COPPER }]}>
+      <SafeAreaView style={[container, { backgroundColor: COLORS.COPPER }]}>
         <Text style={txt}>Profile Container</Text>
-      </View>
+      </SafeAreaView>
     )
   }
 }

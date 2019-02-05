@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 
 import { globalStyles } from '@assets/globalStyles'
-import { NavigationInjectedProps } from 'react-navigation'
+import { NavigationInjectedProps, SafeAreaView } from 'react-navigation'
 import { COLORS } from '@assets/constants'
 
 interface IProps extends NavigationInjectedProps {}
@@ -18,11 +18,11 @@ class SignUp extends Component<IProps> {
     const { navigate } = this.props.navigation
 
     return (
-      <View style={[container, styles.container]}>
+      <SafeAreaView style={[container, styles.container]}>
         <Text style={txt} onPress={() => navigate('HomeNavigator')}>
           Switched to SignUp
         </Text>
-      </View>
+      </SafeAreaView>
     )
   }
 }

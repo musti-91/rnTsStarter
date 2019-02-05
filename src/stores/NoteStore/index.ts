@@ -41,7 +41,8 @@ class NoteMobxStore {
 }
 const NoteStore = new NoteMobxStore()
 /**
- * dummy notes
+ * add placeholder data
+ *
  */
 const newNote = (title: string, content: string) => {
   NoteStore.addNote({

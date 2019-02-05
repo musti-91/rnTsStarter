@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { NavigationInjectedProps } from 'react-navigation'
+import { NavigationInjectedProps, SafeAreaView } from 'react-navigation'
 import { View, Text } from 'react-native'
 
 import { globalStyles } from '@assets/globalStyles'
@@ -13,11 +13,11 @@ class MyModal extends Component<IProps> {
     const { container, txt } = globalStyles
     const { navigate } = this.props.navigation
     return (
-      <View style={[container, { backgroundColor: COLORS.BURGUNDY }]}>
+      <SafeAreaView style={[container, { backgroundColor: COLORS.BURGUNDY }]}>
         <Text style={txt} onPress={() => navigate('switch')}>
           Swipe down to hide modal
         </Text>
-      </View>
+      </SafeAreaView>
     )
   }
 }

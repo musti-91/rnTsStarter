@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { View, Text } from 'react-native'
 
 import { globalStyles } from '@assets/globalStyles'
-import { NavigationInjectedProps } from 'react-navigation'
+import { NavigationInjectedProps, SafeAreaView } from 'react-navigation'
 import { COLORS } from '@assets/constants'
 
 /**
@@ -13,9 +13,9 @@ class MyComponent extends Component<IProps> {
   render() {
     const { container, txt } = globalStyles
     return (
-      <View style={[container, { backgroundColor: COLORS.PRETTY }]}>
+      <SafeAreaView style={[container, { backgroundColor: COLORS.PRETTY }]}>
         <Text style={txt}>MyComponent</Text>
-      </View>
+      </SafeAreaView>
     )
   }
 }

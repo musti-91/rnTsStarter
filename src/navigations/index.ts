@@ -9,9 +9,15 @@ const AuthenticationNavigator = createSwitchNavigator({
   signup: SignUp
 })
 
-const AppContainer = createSwitchNavigator({
-  AuthNavigator: AuthenticationNavigator,
-  HomeNavigator: TabsNavigationContainer
-})
+const AppContainer = createSwitchNavigator(
+  {
+    AuthNavigator: AuthenticationNavigator,
+    HomeNavigator: TabsNavigationContainer
+  },
+  {
+    initialRouteName: 'AuthNavigator',
+    backBehavior: 'initialRoute'
+  }
+)
 
 export default createAppContainer(AppContainer)

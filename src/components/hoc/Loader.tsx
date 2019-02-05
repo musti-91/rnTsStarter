@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { View, Text } from 'react-native'
+import { SafeAreaView } from 'react-navigation'
 
 /**
  * @type High order component
@@ -33,10 +34,10 @@ const Loader = (WrappedComponent: any) => {
     render() {
       const { loading } = this.state
       return (
-        <View>
+        <SafeAreaView>
           {loading && <Text>Loading Content...</Text>}
           {!loading && <WrappedComponent {...this.props} />}
-        </View>
+        </SafeAreaView>
       )
     }
   }
